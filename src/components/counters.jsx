@@ -12,15 +12,6 @@ class Counters extends Component {
     ],
   };
 
-  // handleStartOver = () => {
-  //   console.log(this.state);
-
-  //   const counters = this.initalState;
-  //   this.setState({ counters });
-
-  //   console.log(this.state);
-  // };
-
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
@@ -53,16 +44,9 @@ class Counters extends Component {
   };
 
   render() {
-    // this.initalState = this.State;
     return (
-      <div className="container d-flex flex-column">
+      <div className="d-flex flex-column my-4">
         <div className="row">
-          <button
-            className="btn btn-warning btn-sm m-2 w-10"
-            onClick={this.handleStartOver}
-          >
-            Start Over
-          </button>
           <button
             className="btn btn-danger btn-sm m-2 w-10"
             onClick={this.handleReset}
