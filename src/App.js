@@ -68,6 +68,7 @@ class App extends Component {
             onDecrement={this.handleDecrement}
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
+            totalItems={this.getTotalItems()}
           />
         </main>
       </React.Fragment>

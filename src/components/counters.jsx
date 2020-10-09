@@ -7,7 +7,7 @@ class Counters extends Component {
       <div className="d-flex flex-column my-4">
         <div className="row">
           <button
-            className="btn btn-danger btn-sm m-2 w-10"
+            className={this.getButtonClasses()}
             onClick={this.props.onReset}
           >
             Reset Amount
@@ -29,6 +29,14 @@ class Counters extends Component {
       </div>
     );
   }
+  getButtonClasses = () => {
+    let classes = "btn btn-danger btn-sm m-2 w-10";
+    classes +=
+      this.props.counters.length === 0 || this.props.totalItems === 0
+        ? " invisible"
+        : "";
+    return classes;
+  };
 }
 
 export default Counters;
