@@ -44,11 +44,22 @@ class App extends Component {
       : counters[index].value--;
     this.setState({ counters });
   };
+
+  getTotalItems = () => {
+    const valueArray = [];
+    for (const stateArray of this.state.counters) {
+      valueArray.push(stateArray.value);
+    }
+    const totalItems = valueArray.reduce((a, b) => a + b, 0);
+    return totalItems;
+  };
+
   render() {
     return (
       <React.Fragment>
         <NavBar
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
+          totalItems={this.getTotalItems()}
         />
         <main className="container">
           <Counters
