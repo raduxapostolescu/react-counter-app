@@ -2,17 +2,10 @@ import React, { Component } from "react";
 import NavBar from "./components/navbar";
 import "./App.css";
 import Counters from "./components/counters";
+import { counters } from "./data/data";
 
 class App extends Component {
-  state = {
-    counters: [
-      { id: 1, name: "Coca-Cola", value: 2 },
-      { id: 2, name: "Ursus", value: 1 },
-      { id: 3, name: "Tuica", value: 3 },
-      { id: 4, name: "Ciuc", value: 1 },
-      { id: 5, name: "RedBull", value: 2 },
-    ],
-  };
+  state = counters;
 
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
