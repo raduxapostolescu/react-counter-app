@@ -3,23 +3,28 @@ import Counter from "./counter";
 
 class Counters extends Component {
   render() {
+    const {
+      onReset,
+      counters,
+      onDelete,
+      onIncrement,
+      onDecrement,
+    } = this.props;
+
     return (
       <div className="d-flex flex-column my-4">
         <div className="row">
-          <button
-            className={this.getButtonClasses()}
-            onClick={this.props.onReset}
-          >
+          <button className={this.getButtonClasses()} onClick={onReset}>
             Reset Amount
           </button>
         </div>
-        {this.props.counters.map((counter) => (
+        {counters.map((counter) => (
           <Counter
             key={counter.name}
             counter={counter}
-            onDelete={this.props.onDelete}
-            onIncrement={this.props.onIncrement}
-            onDecrement={this.props.onDecrement}
+            onDelete={onDelete}
+            onIncrement={onIncrement}
+            onDecrement={onDecrement}
           >
             <h4 className="mx-5" style={{ display: "inline" }}>
               {counter.name}
