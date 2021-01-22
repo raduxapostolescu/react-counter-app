@@ -26,7 +26,7 @@ class Counters extends Component {
             onIncrement={onIncrement}
             onDecrement={onDecrement}
           >
-            <h4 className="mx-5 d-inline">{counter.name}</h4>
+            <h4 className="mx-5 d-inline my-2">{counter.name}</h4>
           </Counter>
         ))}
       </div>
